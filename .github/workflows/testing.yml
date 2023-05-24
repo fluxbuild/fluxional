@@ -39,8 +39,10 @@ jobs:
       - name: Install dependencies
         run: npm install -g aws-cdk
 
+      - name: Extract stack to be within build
+        run: cp -r stack/. .
+
       - name: Synth stack & deploy
-        working-directory: stack/
         run: cdk synth && cdk deploy --all --require-approval never
         env:
           AWS_REGION: ${{secrets.AWS_REGION}}

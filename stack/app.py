@@ -17,7 +17,7 @@ class FluxionalStack(Stack):
 
     def lambda_function(self):
         ecr_image = aws_lambda.EcrImageCode.from_asset_image(
-            directory=os.path.join(os.getcwd()), file="Dockerfile.lambda"
+            directory="./", file="Dockerfile.lambda"
         )
 
         return aws_lambda.Function(
