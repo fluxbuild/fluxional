@@ -41,7 +41,7 @@ jobs:
 
       - name: Synth stack & deploy
         working-directory: stack/
-        run: cdk synth && cdk deploy
+        run: cdk synth && cdk deploy --all --require-approval never
         env:
           AWS_REGION: ${{secrets.AWS_REGION}}
           AWS_ACCOUNT_ID: ${{secrets.AWS_ACCOUNT_ID}}
