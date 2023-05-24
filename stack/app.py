@@ -11,7 +11,10 @@ ENV = Environment(account=ACCOUNT_ID, region=REGION)
 class FluxionalStack(Stack):
     def __init__(self, scope: Construct, id: str, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
-    
+
+        self.lambda_function()
+
+
     def lambda_function(self):
         ecr_image = aws_lambda.EcrImageCode.from_asset_image(
             directory=os.path.join(os.getcwd(), "stack"), file="Dockerfile.lambda"
