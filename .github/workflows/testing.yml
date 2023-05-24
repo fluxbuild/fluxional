@@ -40,7 +40,7 @@ jobs:
         run: npm install -g aws-cdk
 
       - name: Synth stack & deploy
-        working-directory: .
+        working-directory: /stack
         run: cdk synth && cdk deploy
         env:
           AWS_REGION: ${{secrets.AWS_REGION}}
