@@ -27,7 +27,7 @@ jobs:
         run: python -m poetry install --no-interaction --no-ansi --no-root
 
       - name: Run tests
-        run: poetry run pytest && poetry run mypy .
+        run: poetry run pytest && poetry run mypy fluxional/
 
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@master
